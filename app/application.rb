@@ -54,8 +54,8 @@ class Application
   def search
     
     search_item = req.params["item"]
-    if @@items.include? (search_term)
-      @@cart << search_term
+    if @@items.include? (search_item)
+      @@cart << search_item
     else
       resp.write "We don't have that item"
 
