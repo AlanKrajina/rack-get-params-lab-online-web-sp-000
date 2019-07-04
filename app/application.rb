@@ -46,6 +46,7 @@ class Application
       resp.write "Your cart is empty"
     end
     add
+    
     resp.finish
   end
 
