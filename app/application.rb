@@ -55,8 +55,21 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
     
-    def 
+    search_tearmn= req.path.match(/search/) 
+    resp.write handle_search(search_term)
+    
     item = req.params["item"]
+
+
+
+  def handle_search(search_term)
+    if @@items.include?(search_term)
+      return "#{search_term} is one of our items"
+    else
+      return "Couldn't find #{search_term}"
+    end
+  end
+
 
     resp.finish
   end
