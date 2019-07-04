@@ -58,7 +58,7 @@ class Application
     item = req.params["item"]
 
     resp.finish
-end
+  end
 end
 
 
