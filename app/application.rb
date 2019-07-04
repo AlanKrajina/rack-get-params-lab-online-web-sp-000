@@ -59,7 +59,7 @@ class Application
     binding.pry
     
     resp.finish
-
+end
 end
 
 
