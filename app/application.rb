@@ -59,16 +59,8 @@ class Application
     if !@@items.include? (search_term)
       @@items << search_term
     else
-      resp.write "Your cart is empty"
+      resp.write "We don't have that item"
 
-
-
-  def handle_search(search_term)
-    if @@items.include?(search_term)
-      return "#{search_term} is one of our items"
-    else
-      return "We don't have that item"
-    end
   end
 
 
