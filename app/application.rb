@@ -52,7 +52,8 @@ class Application
 
 
   def add
-    
+    resp = Rack::Response.new
+    req = Rack::Request.new(env)    
     search_item = req.params["item"]
     if @@items.include? (search_item)
       @@cart << search_item
