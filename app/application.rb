@@ -56,8 +56,7 @@ class Application
     req = Rack::Request.new(env)
     
     item = req.params["item"]
-    binding.pry
-    
+
     resp.finish
 end
 end
