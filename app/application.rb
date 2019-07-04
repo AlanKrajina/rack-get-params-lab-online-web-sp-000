@@ -55,6 +55,7 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
     
+    def 
     item = req.params["item"]
 
     resp.finish
