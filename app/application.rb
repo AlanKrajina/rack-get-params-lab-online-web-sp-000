@@ -56,8 +56,8 @@ class Application
     req = Rack::Request.new(env)
     
     search_term = req.params["item"]
-    if !@@items.include? (search_term)
-      @@items << search_term
+    if @@items.include? (search_term)
+      @@cart << search_term
     else
       resp.write "We don't have that item"
 
