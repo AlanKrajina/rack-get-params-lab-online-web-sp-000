@@ -51,7 +51,7 @@ class Application
 
 
 
-  def search
+  def search(search_item)
     
     search_item = req.params["item"]
     if @@items.include? (search_item)
