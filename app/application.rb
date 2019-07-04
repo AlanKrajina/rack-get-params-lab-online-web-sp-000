@@ -53,7 +53,7 @@ class Application
 
   def search
     
-    search_term = req.params["item"]
+    search_item = req.params["item"]
     if @@items.include? (search_term)
       @@cart << search_term
     else
