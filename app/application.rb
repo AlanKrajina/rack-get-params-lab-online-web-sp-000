@@ -35,6 +35,7 @@ class Application
   def call(env)
     resp = Rack::Response.new
     req = Rack::Request.new(env)
+    search_item = req.params["item"]
 
     if !@@cart.empty?
       @@cart.each do |item|
@@ -44,7 +45,7 @@ class Application
     elsif @@cart.empty?
       resp.write "Your cart is empty"
     end
-    
+    add
     resp.finish
   end
 
@@ -53,7 +54,6 @@ class Application
 
   def add
     
-    search_item = req.params["item"]
     if @@items.include? (search_item)
       @@cart << search_item
     else
