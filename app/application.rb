@@ -55,7 +55,7 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
     
-    
+    item = req.params["item"]
     
     
     resp.finish
