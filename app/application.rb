@@ -56,9 +56,10 @@ class Application
     req = Rack::Request.new(env)
     
     search_term = req.params["item"]
-    if @@items.include? (search_term)
-    
-    search_term = req.params["item"]
+    if !@@items.include? (search_term)
+      @@items << search_term
+    else
+      resp.write "Your cart is empty"
 
 
 
