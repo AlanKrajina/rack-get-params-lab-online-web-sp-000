@@ -41,7 +41,7 @@ class Application
         resp.write "#{item}\n"
       end
 
-    elsif @@cart == nil
+    elsif @@cart.empty?
       resp.write "Your cart is empty"
     end
 
