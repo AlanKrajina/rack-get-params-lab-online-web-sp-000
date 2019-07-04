@@ -55,10 +55,10 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
     
-    search_term= req.path.match(/search/) 
-    resp.write handle_search(search_term)
+    search_term = req.params["item"]
+    if @@items.include? (search_term)
     
-    item = req.params["item"]
+    search_term = req.params["item"]
 
 
 
