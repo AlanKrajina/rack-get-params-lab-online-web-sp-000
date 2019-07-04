@@ -50,8 +50,9 @@ class Application
 
 
 
-
-  def add(search_item)
+  def call(env)
+    resp = Rack::Response.new
+    req = Rack::Request.new(env)
     
     search_item = req.params["item"]
     if @@items.include? (search_item)
@@ -60,6 +61,8 @@ class Application
       resp.write "We don't have that item"
 
     end
+        resp.finish
+
 end
   
 end
