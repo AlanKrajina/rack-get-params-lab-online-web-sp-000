@@ -44,7 +44,7 @@ class Application
     elsif @@cart.empty?
       resp.write "Your cart is empty"
     end
-
+    add
     resp.finish
   end
 
