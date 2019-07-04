@@ -36,12 +36,12 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-    if @@cart
+    if @@cart 
       @@cart.each do |item|
         resp.write "#{item}\n"
       end
 
-    else
+    elsif @@cart == nil
       resp.write "Your cart is empty"
     end
 
